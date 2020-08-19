@@ -15,7 +15,7 @@ public class TNodoArbolGenerico implements INodoGenerico {
     private Object dato;
     private Comparable etiqueta;
 
-    public NodoGenerico(Comparable etiqueta) {
+    public TNodoArbolGenerico(Comparable etiqueta) {
         this.primHijo = null;
         this.herDer = null;
         this.etiqueta = etiqueta;
@@ -106,7 +106,7 @@ public class TNodoArbolGenerico implements INodoGenerico {
     public boolean insertar (Comparable etiqueta, Comparable padre){
     
         if (this.etiqueta.compareTo(padre)==0){
-            NodoGenerico aux = new NodoGenerico(etiqueta);
+            TNodoArbolGenerico aux = new TNodoArbolGenerico(etiqueta);
             aux.setHerDer(this.getPrimHijo());
             this.setPrimHijo(aux);
             return true;

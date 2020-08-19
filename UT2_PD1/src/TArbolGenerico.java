@@ -59,12 +59,12 @@ public class TArbolGenerico  implements IArbolGenerico{
     public boolean insertar (Comparable etiqueta, Comparable padre)
     {
         if (raiz == null){
-            NodoGenerico aux = new NodoGenerico(etiqueta);
+            TNodoArbolGenerico aux = new TNodoArbolGenerico(etiqueta);
             raiz=aux;
             return true;
         }
         else if (padre.compareTo("")==0){
-            NodoGenerico aux = new NodoGenerico(etiqueta);
+            TNodoArbolGenerico aux = new TNodoArbolGenerico(etiqueta);
             aux.setPrimHijo(raiz);
             raiz=aux;
             return true;
