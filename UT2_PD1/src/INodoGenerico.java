@@ -3,13 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UT2.ej1;
-
-
 
 /**
  *
- * @author Diego
+ * @author Facundo Badano
  */
 public interface INodoGenerico {
     
