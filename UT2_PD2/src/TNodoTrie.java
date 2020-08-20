@@ -79,7 +79,7 @@ public class TNodoTrie {
         int altura = 1;
         if (nodo != null) {
             for (TNodoTrie hijo : nodo.hijos) {
-                altura = Math.max(altura, 1 + altura(hijo));
+                altura = Math.max(altura, altura(hijo)+1 );
             }
         }
         return altura;
@@ -88,7 +88,7 @@ public class TNodoTrie {
     public int tamanio (TNodoTrie nodo){
         int tamanio = 1;
         if (nodo != null){
-            for (TNodoTrie hijo : nodo.hijos){
+            for (TNodoTrie aux : nodo.hijos){
                 tamanio ++;
             }
         }

@@ -48,7 +48,7 @@ public class main {
         • ¿cuál es la altura del árbol trie resultante?
             14
         • ¿cuál es su tamaño?
-            
+            27
         */
         System.out.println("Comparaciones en la búsqueda Programa: " + arbol.buscar("programa"));
         System.out.println("Comparaciones en la búsqueda Proselitismo: " + arbol.buscar("proselitismo"));
