@@ -23,17 +23,20 @@ public class TNodoTrie {
         esPalabra = false;
     }
 
-    public void insertar(String unaPalabra, int pagina) {
+    public int insertar(String unaPalabra, int pagina) {
         TNodoTrie nodo = this;
+        int comparaciones=0;
         for (int c = 0; c < unaPalabra.length(); c++) {
             int indice = unaPalabra.charAt(c) - 'a';
             if (nodo.hijos[indice] == null) {
                 nodo.hijos[indice] = new TNodoTrie();
             }
+            comparaciones++;
             nodo = nodo.hijos[indice];
         }
         nodo.esPalabra = true;
         nodo.paginas.add(pagina);
+        return comparaciones;
     }
 
     public int busqueda(String unaPalabra){
@@ -71,4 +74,27 @@ public class TNodoTrie {
     public void imprimir() {
         imprimir("", this);
     }
+    
+    public int altura(TNodoTrie nodo){
+        int altura = 1;
+        if (nodo != null) {
+            for (TNodoTrie hijo : nodo.hijos) {
+                altura = Math.max(altura, 1 + altura(hijo));
+            }
+        }
+        return altura;
+    }
+    
+    public int tamanio (TNodoTrie nodo){
+        int tamanio = 1;
+        if (nodo != null){
+            for (TNodoTrie hijo : nodo.hijos){
+                tamanio ++;
+            }
+        }
+        return tamanio;
+    }
+ 
+       
+    
 }

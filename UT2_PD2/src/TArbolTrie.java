@@ -12,11 +12,11 @@ public class TArbolTrie {
 
     private TNodoTrie raiz;
 
-    public void insertar(String palabra, int pagina) {
+    public Integer insertar(String palabra, int pagina) {
         if (raiz == null) {
             raiz = new TNodoTrie();
         }
-        raiz.insertar(palabra, pagina);
+        return raiz.insertar(palabra, pagina);
     }
 
     public void imprimir() {
@@ -24,5 +24,27 @@ public class TArbolTrie {
             raiz.imprimir();
         }
     }
-    public TNodoTrie getRaiz(){return raiz;}
+    public TNodoTrie getRaiz(){
+        return raiz;
+    }
+    
+    public Integer buscar(String palabra){
+        return raiz.busqueda(palabra);
+    }
+    
+    public Integer altura(TNodoTrie nodo){
+        if (raiz == null){
+            return 0;
+        }else{
+            return raiz.altura(nodo);
+        }
+    }
+    
+    public Integer tamanio (TNodoTrie nodo){
+        if(raiz == null){
+            return 0;
+        }else{
+            return raiz.tamanio(nodo);
+        }
+    }
 }
